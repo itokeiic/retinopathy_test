@@ -51,9 +51,15 @@ DATASET_NAME = 'RETINOPATHY'
 ###############################################################################
 def get_filenames(is_training, data_dir):
   if is_training:
-    return [os.path.join(data_dir, cfg.Retina_TrainingData)]
+    #return [os.path.join(data_dir, cfg.Retina_TrainingData)]
+    files = [join(data_dir, f) for f in listdir(data_dir) if (isfile(join(data_dir, f)) and "_tr.tfrecords." in f)]  #"_tr."
+    # print("[DEBUG] train files: {}".format(files))
+    return files
   else:
-    return [os.path.join(data_dir, cfg.Retina_ValidationData)]
+    #return [os.path.join(data_dir, cfg.Retina_ValidationData)]
+    files = [join(data_dir, f) for f in listdir(data_dir) if (isfile(join(data_dir, f)) and "_va.tfrecords." in f)]  #"_va."
+    # print("[DEBUG] valid files: {}".format(files))
+    return files
 
 
 def parse_record(example_proto, is_training):

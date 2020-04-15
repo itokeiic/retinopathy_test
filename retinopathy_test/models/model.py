@@ -407,14 +407,14 @@ def train(**kwargs):
     e1=time.time()
     # check if retinopathy_tr.tfrecord or retinopathy_va.tfrecord exist locally,
     # if not -> download them from the RemoteStorage
-    if not (os.path.exists(training_data) or os.path.exists(validation_data)):
-        # Retina_RemoteDataRecords and Retina_LocalDataRecords are defined in config.py #vk
-        print("[INFO] Either %s or %s NOT found locally, download them from %s" % 
-              (training_data, validation_data, cfg.Retina_RemoteDataRecords))
-        output, error = rclone_copy(cfg.Retina_RemoteDataRecords, cfg.Retina_LocalDataRecords)
-        if error:
-            message = "[ERROR] training data not copied. rclone returned: " + error
-            raise Exception(message)
+    #if not (os.path.exists(training_data) or os.path.exists(validation_data)):
+        ## Retina_RemoteDataRecords and Retina_LocalDataRecords are defined in config.py #vk
+        #print("[INFO] Either %s or %s NOT found locally, download them from %s" % 
+              #(training_data, validation_data, cfg.Retina_RemoteDataRecords))
+        #output, error = rclone_copy(cfg.Retina_RemoteDataRecords, cfg.Retina_LocalDataRecords)
+        #if error:
+            #message = "[ERROR] training data not copied. rclone returned: " + error
+            #raise Exception(message)
             
         
     download_time=time.time()-e1
