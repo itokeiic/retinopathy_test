@@ -25,6 +25,8 @@ from absl import app as absl_app #ki: absl is Google's common libraries
 from absl import flags
 import tensorflow as tf  # pylint: disable=g-bad-import-order
 
+from os import listdir
+from os.path import isfile, join
 from official.utils.flags import core as flags_core
 from official.utils.logs import logger
 import retinopathy_test.models.resnet_model as resnet_model
