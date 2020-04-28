@@ -14,6 +14,6 @@ pytest-cov
 
 #tensorflow>=1.10.0
 pydot-ng
-deepaas>=0.5.1
+deepaas>=1.0.1
 flaat
 aiohttp
