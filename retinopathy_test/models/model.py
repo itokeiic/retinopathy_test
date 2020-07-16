@@ -411,8 +411,8 @@ def train(**kwargs):
         # Retina_RemoteDataRecords and Retina_LocalDataRecords are defined in config.py #vk
         print("[INFO] Either %s or %s NOT found locally, download them from %s" % 
               (training_data, validation_data, cfg.Retina_RemoteDataRecords))
-        #output, error = rclone_copy(cfg.Retina_RemoteDataRecords, cfg.Retina_LocalDataRecords)
-        output, error = rclone_copy(cfg.Retina_RemoteUnsplitRecords, cfg.Retina_LocalDataRecords)
+        output, error = rclone_copy(cfg.Retina_RemoteDataRecords, cfg.Retina_LocalDataRecords)
+        #output, error = rclone_copy(cfg.Retina_RemoteUnsplitRecords, cfg.Retina_LocalDataRecords)
         if error:
             message = "[ERROR] training data not copied. rclone returned: " + error
             raise Exception(message)
